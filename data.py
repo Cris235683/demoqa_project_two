@@ -1,1 +1,1 @@
-BASE_URL = 'http://demoqo.com/'
+BASE_URL = 'http://demoqa.com/'
