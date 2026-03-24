@@ -1,6 +1,6 @@
-import allure
 from abc import ABC
 
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.expected_conditions import (
