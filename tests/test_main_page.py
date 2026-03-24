@@ -1,5 +1,7 @@
-from pages.main_page import MainPage
+import allure
 import data
+
+from pages.main_page import MainPage
 
 
 class TestMainPage:
