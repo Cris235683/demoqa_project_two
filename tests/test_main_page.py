@@ -68,5 +68,5 @@ class TestMainPage:
         main_page = MainPage(driver)
         main_page.open(data.BASE_URL)
 
-        with allure.step("Название первой карточки соответствует ожидаемой"):
+        with allure.step("Название второй карточки соответствует ожидаемой"):
             assert main_page.second_card_with_name() 
