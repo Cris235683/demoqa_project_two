@@ -6,9 +6,8 @@ from pages.base_page import BasePage
 
 class MainPage(BasePage):
     CARD_LINK = (By.XPATH, ".//div[@class='category-cards']/a")
+    CARD_NAME = lambda name: (By.XPATH, f".//h5[text()='{name}']")
     LOGO_LINK = (By.XPATH, ".//header/a")
-    FIRST_CARD_NAME = (By.XPATH, ".//h5[text()='Elements']")
-    SECOND_CARD_NAME = (By.XPATH, ".//h5[text()='Forms']")
 
     def get_number_cards(self):
         self.wait_presence_of_element_located(MainPage.CARD_LINK)
@@ -20,12 +19,7 @@ class MainPage(BasePage):
         self.click(MainPage.LOGO_LINK)
 
     @allure.step("Проверка имени первой карточки")
-    def is_card_with_name(self):
-        self.wait_presence_of_element_located(MainPage.FIRST_CARD_NAME)
-        return self.driver.find_element(*MainPage.FIRST_CARD_NAME).is_displayed()
-    
-    @allure.step("Проверка имени второй карточки")
-    def second_card_with_name(self):
-        self.wait_presence_of_element_located(MainPage.SECOND_CARD_NAME)
-        return self.driver.find_element(*MainPage.SECOND_CARD_NAME).is_displayed()
+    def is_card_with_name(self, name):
+        self.wait_presence_of_element_located(MainPage.CARD_NAME(name))
+        return self.driver.find_element(*MainPage.CARD_NAME(name)).is_displayed()
     
