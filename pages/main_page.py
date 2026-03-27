@@ -18,7 +18,7 @@ class MainPage(BasePage):
     def click_on_logo(self):
         self.click(MainPage.LOGO_LINK)
 
-    @allure.step("Проверка имени первой карточки")
+    @allure.step("Проверка имен карточек")
     def is_card_with_name(self, name):
         self.wait_presence_of_element_located(MainPage.CARD_NAME(name))
         return self.driver.find_element(*MainPage.CARD_NAME(name)).is_displayed()
