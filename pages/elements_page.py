@@ -11,7 +11,7 @@ class ElementPage(BasePage):
 
     @allure.step('Проверка кол-ва элементов в карточке Elements')
     def get_number_elements(self):
-        self.wait_presents_of_element_located(ElementPage.ELEMENT_QUALITY)
+        self.wait_presence_of_element_located(ElementPage.ELEMENT_QUALITY)
         cards = self.driver.find_elements(*ElementPage.ELEMENT_QUALITY)
         return len(cards)
     
@@ -21,5 +21,5 @@ class ElementPage(BasePage):
     
     @allure.step('Проверка названия елементов в карточке Elements')
     def is_elements_with_name_correct(self, name):
-        self.wait_until_button_clickable(ElementPage.ELEMENT_NAME(name))
+        self.wait_presence_of_element_located(ElementPage.ELEMENT_NAME(name))
         return self.driver.find_element(*ElementPage.ELEMENT_NAME(name)).is_displayed()
