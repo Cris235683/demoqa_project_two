@@ -3,6 +3,7 @@ import pytest
 
 import data
 from pages.main_page import MainPage
+from pages.elements_page import ElementPage
 
 
 @allure.feature("Тестирование главной страницы")
@@ -16,6 +17,7 @@ class TestMainPage:
 
         with allure.step("Проверка правильности заголовка"):
             assert main_page.get_title() == "demosite"
+
     
     @allure.title("Проверка карточек на странице равно 6")
     @allure.description("На странице должно быть 6 карточек")
@@ -25,6 +27,7 @@ class TestMainPage:
 
         with allure.step("Поверка количества карточек"):
             assert main_page.get_number_cards() == 6  
+
 
     @allure.title("При клике на лого открывается стартовая страница")
     @allure.description("При клике должна открываться стартовая страница ")
@@ -42,6 +45,7 @@ class TestMainPage:
         with allure.step("title соответствует ожидаемому"):
             assert main_page.get_title() == 'demosite' 
 
+<<<<<<< HEAD
     @allure.title("Проверка правильности названия карточки с именем {name_card}")
     @allure.description("Проверка названия карточки")
     @pytest.mark.parametrize(
@@ -66,3 +70,27 @@ class TestMainPage:
         with allure.step("Название первой карточки соответствует ожидаемой"):
             assert main_page.is_card_with_name(name_card) 
         
+=======
+
+    @allure.title("Проверка правильности названия карточки с именем {name_card}")
+    @allure.description("Проверка названия карточки")
+    @pytest.mark.parametrize("name_card", data.CARD)
+    def test_name_card_is_element(self, driver, name_card):
+
+        main_page = MainPage(driver)
+        main_page.open(data.BASE_URL)
+
+        with allure.step("Название карточки соответствует ожидаемой"):
+            assert main_page.is_card_with_name(name_card)
+
+    
+    def test_go_to_element_page(self, driver):
+        main_page = MainPage(driver)
+        main_page.open(data.BASE_URL)
+        main_page.go_to_elements_page()
+        elements_page = ElementPage(
+            main_page.driver
+        )
+
+        assert elements_page.go_to_elements_page()
+>>>>>>> 6425c18dd60b204ccfe6860779be8ffea7759512
