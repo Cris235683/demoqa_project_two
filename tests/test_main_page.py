@@ -45,33 +45,6 @@ class TestMainPage:
         with allure.step("title соответствует ожидаемому"):
             assert main_page.get_title() == 'demosite' 
 
-<<<<<<< HEAD
-    @allure.title("Проверка правильности названия карточки с именем {name_card}")
-    @allure.description("Проверка названия карточки")
-    @pytest.mark.parametrize(
-        "name_card",
-         ['Elements',
-          'Forms',
-          'Alerts, Frame & Windows',
-          'Widgets', 
-          'Interactions',
-          'Book Store Application'
-          ])
-    def test_name_cards_are_expected_name(self, driver, name_card):
-        """
-        1. открыть страницу с заданным url
-        2. подождали пока загрузится
-        3. находим первую карточку стартовой страницы
-        4. проверить что название карточки соответствует ожидаемому
-        """
-        main_page = MainPage(driver)
-        main_page.open(data.BASE_URL)
-
-        with allure.step("Название первой карточки соответствует ожидаемой"):
-            assert main_page.is_card_with_name(name_card) 
-        
-=======
-
     @allure.title("Проверка правильности названия карточки с именем {name_card}")
     @allure.description("Проверка названия карточки")
     @pytest.mark.parametrize("name_card", data.CARD)
@@ -93,4 +66,4 @@ class TestMainPage:
         )
 
         assert elements_page.go_to_elements_page()
->>>>>>> 6425c18dd60b204ccfe6860779be8ffea7759512
+

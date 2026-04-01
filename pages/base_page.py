@@ -35,4 +35,6 @@ class BasePage(ABC):
         self.wait_clickable_button(locator)
         self.driver.find_element(*locator).click()
 
-        
+    def fill_up_text_field(self, locator, text):
+        self.wait_presence_of_element_located(locator)
+        self.driver.find_element(*locator).send_keys(text)
