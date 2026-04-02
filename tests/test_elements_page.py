@@ -6,8 +6,6 @@ from pages.elements_page import ElementPage
 
 
 class TestElements:
-
-
     @allure.title("Проверка открытия сайта")
     @allure.description("Сайт открывается с нужным заголовком")
     def test_element_page_is_available(self, driver):
