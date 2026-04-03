@@ -1,5 +1,3 @@
-import allure
-import pytest
 import time
 
 import data

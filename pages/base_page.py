@@ -1,8 +1,8 @@
 import allure
 
-from selenium.webdriver.common.by import By
+
 from selenium.webdriver.support.expected_conditions import (
-    element_to_be_clickable, 
+    element_to_be_clickable,
     presence_of_element_located,
     visibility_of_element_located
     )

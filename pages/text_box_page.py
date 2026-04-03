@@ -41,3 +41,7 @@ class TextBoxPage(BasePage):
         self.filling_email_address_field(data_form.get("email"))
         self.filling_address_field(data_form.get("address"))
         self.filling_permanent_address_field(data_form.get("permanent_address"))
+    
+    @allure.step("Ожидаемые данные на странице")
+    def has_dicpacted_data_on_page(self):
+        ...
