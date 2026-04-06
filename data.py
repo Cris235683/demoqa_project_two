@@ -36,5 +36,6 @@ DATA_FORM = {
 
 PRACTICE_FORM_URL = 'https://demoqa.com/automation-practice-form'
 
+
 class PracticeFormPageData:
     H1 = 'Practice Form'

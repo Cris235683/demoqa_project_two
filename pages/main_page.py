@@ -11,8 +11,12 @@ class MainPage(BasePage):
     ELEMENTS_LINK = (By.XPATH, "//a[@href='/elements']")
 
     def get_number_cards(self):
-        self.wait_presence_of_element_located(MainPage.CARD_LINK)
-        cards = self.driver.find_elements(*MainPage.CARD_LINK)
+        self.wait_presence_of_element_located(
+            MainPage.CARD_LINK
+            )
+        cards = self.driver.find_elements(
+            *MainPage.CARD_LINK
+            )
         return len(cards)
 
     @allure.step("Кликаем по лого")

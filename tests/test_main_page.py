@@ -11,7 +11,8 @@ class TestMainPage:
 
     @allure.title("Проверка доступности главной страницы")
     @allure.description(
-        "Проверка осуществляется соответствию названию заголовка заданным значением"
+        "Проверка осуществляется соответствию "
+        "названию заголовка заданным значением"
     )
     def test_main_page_is_avaliable(self, driver):
         main_page = MainPage(driver)
@@ -69,4 +70,6 @@ class TestMainPage:
             )
 
         with allure.step("Проверка названия сайта"):
-            assert data.TITLE_OF_ELEMENT_PAGE == elements_page.get_title_from_page()
+            assert data.TITLE_OF_ELEMENT_PAGE == (
+                elements_page.get_title_from_page()
+                )

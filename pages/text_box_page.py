@@ -46,7 +46,9 @@ class TextBoxPage(BasePage):
         self.fill_up_full_name_field(data_form.get('full_name'))
         self.fill_up_user_email_field(data_form.get('email'))
         self.fill_up_current_address_field(data_form.get('address'))
-        self.fill_up_permanent_address_field(data_form.get('permanent_address'))
+        self.fill_up_permanent_address_field(
+            data_form.get('permanent_address')
+            )
 
     @allure.step("Получение полного имени")
     def get_full_name(self):
@@ -76,7 +78,8 @@ class TextBoxPage(BasePage):
         return (self.get_full_name() == data_form.get('full_name') and
                 self.get_email() == data_form.get('email') and
                 self.get_current_address() == data_form.get('address') and
-                self.get_permanenr_addres() == data_form.get('permanent_address'))
+                self.get_permanenr_addres() == data_form.get(
+                    'permanent_address'))
 
     @staticmethod
     def get_data_only(text):
