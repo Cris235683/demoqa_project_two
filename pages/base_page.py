@@ -1,10 +1,9 @@
 import allure
 
-
 from selenium.webdriver.support.expected_conditions import (
     element_to_be_clickable,
     presence_of_element_located,
-    visibility_of_element_located
+    visibility_of_element_located,
     )
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -25,18 +24,18 @@ class BasePage(ABC):
 
     @allure.step('Ожидание элемента на странице {locator}')
     def wait_presence_of_element_located(self, locator):
-        return WebDriverWait(self.driver, 10).until(
-            presence_of_element_located(locator))
-
-    @allure.step('Ожидание видимости элемента на странице {locator}')
-    def wait_visibility_of_element_located(self, locator):
-        return WebDriverWait(self.driver, 10).until(
-            visibility_of_element_located(locator))
+        return WebDriverWait(
+            self.driver, 10).until(presence_of_element_located(locator))
 
     @allure.step('Ожидание кликабельности элемента')
     def wait_clickable_button(self, locator):
-        return WebDriverWait(self.driver, 10).until(
-            element_to_be_clickable(locator))
+        return WebDriverWait(
+            self.driver, 10).until(element_to_be_clickable(locator))
+
+    @allure.step('Ожидание видимости элемента на странице {locator}')
+    def wait_visibility_of_element_located(self, locator):
+        return WebDriverWait(
+            self.driver, 10).until(visibility_of_element_located(locator))
 
     @allure.step('Клик по заданному элементу')
     def click(self, locator):
@@ -48,9 +47,14 @@ class BasePage(ABC):
         self.wait_presence_of_element_located(locator)
         self.driver.find_element(*locator).send_keys(text)
 
+    @allure.step("Переход к элементу")
     def scroll_to_element(self, locator):
         self.wait_presence_of_element_located(locator)
         element = self.driver.find_element(*locator)
         self.driver.execute_script(
-            'arguments[0].scrollIntoView(true)', element
-            )
+            'arguments[0].scrollIntoView(true);', element
+        )
+
+    def get_text_from_element(self, locator):
+        self.wait_presence_of_element_located(locator)
+        return self.driver.find_element(*locator).text

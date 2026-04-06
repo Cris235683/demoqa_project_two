@@ -8,6 +8,7 @@ class ElementPage(BasePage):
     ELEMENT_QUALITY = (By.XPATH, "(//ul[@class='menu-list'])[1]/li")
     ELEMENT_NAME = (lambda name: (By.XPATH, f".//span[text()='{name}']"))
     ELEMENT_LINK = (By.XPATH, "//a[@href='https://demoqa.com']")
+    TITLE_PAGE = (By.XPATH, "//div[contains(text(), 'Please')]")
 
     @allure.step('Проверка кол-ва элементов в карточке Elements')
     def get_number_elements(self):
@@ -24,3 +25,6 @@ class ElementPage(BasePage):
         self.wait_presence_of_element_located(ElementPage.ELEMENT_NAME(name))
         return self.driver.find_element(
             *ElementPage.ELEMENT_NAME(name)).is_displayed()
+
+    def get_title_from_page(self):
+        return self.get_text_from_element(self.TITLE_PAGE)

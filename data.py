@@ -23,11 +23,15 @@ ELEMENTS = [
     "Dynamic Properties"
 ]
 
-Text_Box_URL = "https://demoqa.com/text-box"
+TITLE_OF_ELEMENT_PAGE = 'Please select an item from left to start practice.'
 
-data_form = {
+TEXT_BOX_URL = "https://demoqa.com/text-box"
+
+DATA_FORM = {
     "full_name": "sardelka",
     "email": "a@a.ru",
     "address": "Тамбов",
     "permanent_address": "Тамбов"
 }
+
+PRACTICE_FORM = 'https://demoqa.com/forms'
