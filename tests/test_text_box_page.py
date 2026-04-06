@@ -3,6 +3,7 @@ import time
 import data
 from pages.text_box_page import TextBoxPage
 
+
 class TestTextBox():
     def test_text_box_form_with_all_data(self, driver):
         text_box = TextBoxPage(driver)

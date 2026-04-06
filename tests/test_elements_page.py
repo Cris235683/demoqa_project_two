@@ -11,7 +11,7 @@ class TestElements:
     def test_element_page_is_available(self, driver):
         elements_page = ElementPage(driver)
         elements_page.open(data.ELEMENTS_URL)
-        
+
         with allure.step("Проверка названия сайта"):
             assert elements_page.get_title() == 'demosite'
 
@@ -29,11 +29,12 @@ class TestElements:
     def test_number_of_cards_in_elements_is_nine(self, driver):
         elements_page = ElementPage(driver)
         elements_page.open(data.ELEMENTS_URL)
-        
+
         with allure.step("Проверка кол-ва карточек"):
             assert elements_page.get_number_elements() == 9
 
-    @allure.title("Проверка правильности названия елемента с именем {name_card}")
+    @allure.title(
+            "Проверка правильности названия елемента с именем {name_card}")
     @allure.description("Название елемента с именем {name_card}")
     @pytest.mark.parametrize("name_card", data.ELEMENTS)
     def test_name_elements_in_card_is_correct(self, driver, name_card):
