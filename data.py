@@ -34,8 +34,20 @@ DATA_FORM = {
     "permanent_address": "Тамбов"
 }
 
-PRACTICE_FORM_URL = 'https://demoqa.com/automation-practice-form'
+PRACTICE_FORM_URL = "https://demoqa.com/automation-practice-form"
 
 
 class PracticeFormPageData:
-    H1 = 'Practice Form'
+    H1 = "Practice Form"
+
+ALERTS_WINDOWS_URL = "https://demoqa.com/alerts"
+
+
+class AlertsWindowsPageData:
+    H1 = "Alerts"
+
+BROWSER_WINDOWS_URL = "https://demoqa.com/browser-windows"
+
+
+class BrowserWindowPageData:
+    H1 = "Browser Windows"
