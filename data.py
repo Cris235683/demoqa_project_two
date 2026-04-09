@@ -40,7 +40,8 @@ PRACTICE_FORM_URL = "https://demoqa.com/automation-practice-form"
 PRACTICE_FORM = {
     "full_name": "sardelka",
     "last_name": "ye",
-    "email": "a@a.ru"
+    "email": "a@a.ru",
+    "number": "5574758758"
     }
 
 
