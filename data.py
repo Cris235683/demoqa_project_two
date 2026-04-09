@@ -47,11 +47,13 @@ PRACTICE_FORM = {
 class PracticeFormPageData:
     H1 = "Practice Form"
 
+
 ALERTS_WINDOWS_URL = "https://demoqa.com/alerts"
 
 
 class AlertsWindowsPageData:
     H1 = "Alerts"
+
 
 BROWSER_WINDOWS_URL = "https://demoqa.com/browser-windows"
 
